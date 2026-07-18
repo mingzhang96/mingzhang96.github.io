@@ -1,9 +1,8 @@
 <!DOCTYPE HTML>
-<html lang="zh-CN">
+<html lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-    <!-- ============ 网页标签标题（浏览器标签上显示的文字） ============ -->
     <title>Zhang Ming</title>
 
     <meta name="author" content="Zhang Ming">
@@ -18,154 +17,230 @@
         <td style="padding:0px">
 
           <!-- =========================================================
-               1. 顶部：姓名 / 简介 / 联系方式 / 头像
+               HEADER
                ========================================================= -->
           <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
             <tr style="padding:0px">
-              <td style="padding:2.5%;width:63%;vertical-align:middle">
-
-                <!-- 你的姓名 -->
+              <td style="padding:2.5%;width:72%;vertical-align:middle">
                 <p class="name" style="text-align: center;">
                   Zhang Ming
                 </p>
-
-                <!-- 自我介绍：1-2 段，说明你现在在哪、做什么、过去做过什么、教育背景 -->
                 <p>
-                  我是 <a href="https://your-company.com/">Vivix AI</a> 的一名工程师，
-                  主要负责 XXX 方向的工作。此前在 XXX 公司做过 YYY。
-                  我毕业于 <a href="https://your-university.edu/">XX 大学</a>，专业是 ZZZ。
+                  I'm an algorithm engineer at <a href="https://vivix.ai/">Vivix</a>, where I lead the data workstream for our multimodal foundation model pretraining &mdash; from data flow design and framework architecture to operator development and deployment at production scale.
                 </p>
                 <p>
-                  我对 XXX、YYY、ZZZ 感兴趣，业余时间会写一些 <a href="#">开源项目</a> 或
-                  <a href="#">博客</a>。
+                  Previously I spent five years at <a href="https://www.sensetime.com/">SenseTime</a> in <a href="https://liuyu.us/">Yu Liu</a>'s group, working across face recognition, reinforcement learning, neural architecture search, and image generation. I received my B.Eng. in Information Engineering and M.Eng. in Communication Engineering from <a href="https://www.bupt.edu.cn/">Beijing University of Posts and Telecommunications</a>. I joined Vivix in January 2025 as part of the founding team.
                 </p>
-
-                <!-- 联系方式和外部链接 -->
-                <p style="text-align:center">
-                  <a href="mailto:you@example.com">Email</a> &nbsp;/&nbsp;
-                  <a href="data/CV.pdf">CV</a> &nbsp;/&nbsp;
-                  <a href="https://github.com/your-username">Github</a> &nbsp;/&nbsp;
-                  <a href="https://twitter.com/your-handle">Twitter</a> &nbsp;/&nbsp;
-                  <a href="https://linkedin.com/in/your-handle">LinkedIn</a>
+                <p>
+                  I'm most interested in the infrastructure layer of large-scale machine learning &mdash; the systems that turn raw signal into training-ready inputs for foundation models.
                 </p>
               </td>
-
-              <!-- 头像图片：把你的照片放到 images/profile.jpg -->
-              <td style="padding:2.5%;width:37%;max-width:37%">
-                <a href="images/profile.jpg">
-                  <img style="width:100%;max-width:100%;object-fit: cover; border-radius: 50%;"
-                       alt="profile photo" src="images/profile.jpg" class="hoverZoomLink">
-                </a>
+              <td style="padding:2.5%;width:28%;max-width:28%">
+                <!-- Put your photo at images/profile.jpg -->
+                <img style="width:100%;max-width:180px;object-fit: cover; border-radius: 50%;"
+                     alt="profile photo" src="images/profile.jpg" class="hoverZoomLink">
               </td>
             </tr>
           </tbody></table>
 
 
           <!-- =========================================================
-               2. 项目 Projects
-               每个项目 = 一个 <tr>，左边缩略图，右边标题/简介/链接
-               复制粘贴一整块 <tr>...</tr> 就能加一个新项目
+               SELECTED WORK
                ========================================================= -->
           <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
             <tr>
               <td style="padding:16px;width:100%;vertical-align:middle">
-                <h2>项目 / Projects</h2>
+                <h2>Selected Work</h2>
+                <p>
+                  A reverse-chronological list of projects I've led or contributed to substantially. Some entries link to open-source repositories or associated publications.
+                </p>
               </td>
             </tr>
           </tbody></table>
 
           <table style="width:100%;border:0px;border-spacing:0px 10px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 
-            <!-- ---------- 项目 1 ---------- -->
+            <!-- ---------- VortexFlow ---------- -->
             <tr>
               <td style="padding:16px;width:20%;vertical-align:middle">
-                <img src="images/project1.jpg" width="160">
+                <img src="images/vortexflow.gif" alt="VortexFlow" style="width:100%;max-width:160px;border-radius:6px;">
               </td>
               <td style="padding:8px;width:80%;vertical-align:middle">
-                <a href="https://github.com/your-username/project1">
-                  <span class="papertitle">项目 1 的名字</span>
-                </a>
+                <span class="papertitle">VortexFlow &mdash; A Distributed Data Pipeline Framework for Multimodal Pretraining</span>
                 <br>
-                <em>技术栈：Python, PyTorch, ...</em>
+                <em>Vivix &middot; 2026.02 &ndash; Present &middot; Data Lead</em>
                 <br>
-                <p>这里写一段项目简介 —— 是什么、解决了什么问题、你在里面做了什么。</p>
-                <a href="https://github.com/your-username/project1">代码</a> /
-                <a href="https://your-project-demo.com">Demo</a> /
-                <a href="#">文档</a>
+                <p>
+                  A DAG-declarative, distributed video data processing framework designed and built from scratch to sustain the data appetite of multimodal foundation model pretraining. VortexFlow schedules a long chain of pluggable operators (VAD, scene cut, black-bar and watermark detection, OCR, aesthetics, dedup, captioning, etc.) across a heterogeneous cluster, with hot-reloadable configuration, dynamic autoscaling, replay/backfill, and end-to-end checkpoint recovery. Under the hood it composes Kubernetes, Kafka, Redis, PostgreSQL, ClickHouse, and OSS, with results funneled into a ClickHouse wide table for downstream querying.
+                </p>
+                <p>
+                  In production the pipeline sustains <b>~50M clips/day</b> across roughly <b>100k CPU cores</b> and <b>1000+ GPUs</b>. Beyond the framework itself, a substantial share of the throughput comes from operator-level optimization work &mdash; restructuring internal implementations, introducing intra-operator parallelism, and re-architecting bottlenecks. I lead a team of three engineers and four interns on this system, and own the design from data-flow topology down to individual operator implementations.
+                </p>
               </td>
             </tr>
 
-            <!-- ---------- 项目 2 ---------- -->
+            <!-- ---------- Tiptap post-training data ---------- -->
             <tr>
               <td style="padding:16px;width:20%;vertical-align:middle">
-                <img src="images/project2.jpg" width="160">
+                <img src="images/tiptap-lab.jpg" alt="Tiptap &amp; A2V" style="width:100%;max-width:160px;border-radius:6px;">
               </td>
               <td style="padding:8px;width:80%;vertical-align:middle">
-                <a href="https://github.com/your-username/project2">
-                  <span class="papertitle">项目 2 的名字</span>
-                </a>
+                <span class="papertitle">Post-Training Data Pipelines for Video Generation (Tiptap &amp; A2V)</span>
                 <br>
-                <em>技术栈：Go, Kubernetes, ...</em>
+                <em>Vivix &middot; 2025</em>
                 <br>
-                <p>项目 2 的简介。</p>
-                <a href="https://github.com/your-username/project2">代码</a>
+                <p>
+                  Vivix's early model portfolio spanned <b>Tiptap</b> &mdash; a trajectory-controlled video generation app (since discontinued) &mdash; and an <b>A2V video generation model</b>. I designed and built the end-to-end data processing and filtering pipelines that produced post-training data for both, tailored to each model's needs.
+                </p>
+                <p>
+                  Each pipeline chained more than a dozen operators &mdash; scene splitting, black-bar / subtitle / watermark detection, OCR, motion analysis, shot-cut and continuity checks, aesthetic scoring, quality classifiers, near-duplicate detection, and multi-stage captioning &mdash; composed into a DAG with model-specific filtering rules layered on top. Getting the composition right was non-trivial: the same raw video had to be routed through different filter budgets, and captioned with different prompts depending on whether it was destined for the trajectory-control model or the A2V model. In production the pipelines processed on the order of <b>tens of millions</b> of clips on Kubernetes.
+                </p>
+                <p>
+                  This was the project where a data-centric lens paid off most directly: careful decisions about which clips to keep, which signals to weight, and how to sequence filters translated into measurable gains in downstream generation quality &mdash; and shaped how I thought about the framework I would build next.
+                </p>
               </td>
             </tr>
 
-            <!-- 想加更多项目，复制上面一整块 <tr>...</tr> 即可 -->
+            <!-- ---------- Miaohua ---------- -->
+            <tr>
+              <td style="padding:16px;width:20%;vertical-align:middle">
+                <img src="images/miaohua-logo.jpg" alt="Miaohua" style="width:100%;max-width:160px;border-radius:6px;">
+              </td>
+              <td style="padding:8px;width:80%;vertical-align:middle">
+                <span class="papertitle">Miaohua &mdash; Product Engineering and Pretraining Data</span>
+                <br>
+                <em>SenseTime &middot; 2022.10 &ndash; 2024.12</em>
+                <br>
+                <p>
+                  <a href="https://miaohua.sensetime.com/">Miaohua</a> is SenseTime's text-to-image product. I first worked on product implementation and inference deployment; once the product stabilized and was handed off to another team, I moved to its base-model pretraining data. Scaling to <b>billion-level</b> data was where I began to appreciate data-as-a-first-class-citizen: aesthetics operators, tagging pipelines, and the observation that data quality dominates model quality &mdash; a perspective that continues to shape my work at Vivix.
+                </p>
+              </td>
+            </tr>
+
+            <!-- ---------- GoBigger ---------- -->
+            <tr>
+              <td style="padding:16px;width:20%;vertical-align:middle">
+                <a href="https://github.com/opendilab/GoBigger">
+                  <img src="images/gobigger-overview.jpg" alt="GoBigger" style="width:100%;max-width:160px;border-radius:6px;">
+                </a>
+              </td>
+              <td style="padding:8px;width:80%;vertical-align:middle">
+                <a href="https://github.com/opendilab/GoBigger">
+                  <span class="papertitle">GoBigger &mdash; A Scalable Multi-Agent Interactive Simulation Platform</span>
+                </a>
+                <br>
+                <em>SenseTime / OpenDILab &middot; 2021.08 &ndash; 2022</em>
+                <br>
+                <p>
+                  GoBigger is an <em>agar</em>-like multi-agent game environment released as part of the OpenDILab ecosystem, designed for research on cooperation and competition among learning agents. I designed and implemented the environment, organized a large-scale multi-agent RL competition on top of it, built the accompanying benchmark, and led algorithmic work on multi-agent reinforcement learning within this setting.
+                </p>
+                <p>
+                  <a href="https://github.com/opendilab/GoBigger">code</a> /
+                  <a href="https://openreview.net/forum?id=NmXR-9tGrIB">ICLR 2023 paper</a> (first author)
+                </p>
+              </td>
+            </tr>
+
+            <!-- ---------- NAS ---------- -->
+            <tr>
+              <td style="padding:16px;width:20%;vertical-align:middle">
+                <a href="https://arxiv.org/abs/2105.11694">
+                  <img src="images/fnas.jpg" alt="FNAS" style="width:100%;max-width:160px;border-radius:6px;">
+                </a>
+              </td>
+              <td style="padding:8px;width:80%;vertical-align:middle">
+                <span class="papertitle">RL-Based Neural Architecture Search</span>
+                <br>
+                <em>SenseTime &middot; 2020.05 &ndash; 2021.08</em>
+                <br>
+                <p>
+                  Built an internal RL-based neural architecture search system end-to-end &mdash; supernet search space, learner, actor, and coordinator &mdash; along with cluster-side features (e.g. GPU preemption) tailored to the company's shared training infrastructure. The system reached SOTA on standard benchmarks and, more importantly, was adopted by <b>dozens of internal product lines</b> to search architectures for their downstream models.
+                </p>
+                <p>
+                  Associated publication:
+                  <a href="https://arxiv.org/abs/2105.11694">FNAS: Uncertainty-Aware Fast Neural Architecture Search</a>
+                  (Liu, <b>Zhang</b>, Sun, Liu, Song, Liu, Li; arXiv 2021).
+                </p>
+              </td>
+            </tr>
+
+            <!-- ---------- DI-star ---------- -->
+            <tr>
+              <td style="padding:16px;width:20%;vertical-align:middle">
+                <a href="https://github.com/opendilab/DI-star">
+                  <img src="images/distar-match.jpg" alt="DI-star" style="width:100%;max-width:160px;border-radius:6px;">
+                </a>
+              </td>
+              <td style="padding:8px;width:80%;vertical-align:middle">
+                <a href="https://github.com/opendilab/DI-star">
+                  <span class="papertitle">DI-star &mdash; Grandmaster-Level StarCraft II AI</span>
+                </a>
+                <br>
+                <em>SenseTime / OpenDILab &middot; 2020 &ndash; 2021</em>
+                <br>
+                <p>
+                  DI-star is an open-source distributed training platform for StarCraft II agents, whose trained models compete at grandmaster level and have publicly played against professional players. I owned the <b>actor</b> subsystem &mdash; environment inference, tensor transport optimization between actors and learners, and the parallel process-management layer that keeps thousands of concurrent rollouts stable.
+                </p>
+                <p><a href="https://github.com/opendilab/DI-star">code</a></p>
+              </td>
+            </tr>
+
+            <!-- ---------- FRVT ---------- -->
+            <tr>
+              <td style="padding:16px;width:20%;vertical-align:middle">
+                <a href="https://pages.nist.gov/frvt/">
+                  <img src="images/frvt-nist.jpg" alt="NIST FRVT" style="width:100%;max-width:160px;border-radius:6px;">
+                </a>
+              </td>
+              <td style="padding:8px;width:80%;vertical-align:middle">
+                <span class="papertitle">NIST FRVT &mdash; Face Recognition Engineering</span>
+                <br>
+                <em>SenseTime &middot; 2019.09 &ndash; 2020.04</em>
+                <br>
+                <p>
+                  My first project at SenseTime, as an intern joining Yu Liu's group. I worked on the engineering side of the team's <a href="https://pages.nist.gov/frvt/">NIST FRVT</a> submission: inference-time acceleration of the face recognition model and the SDK that ran under the evaluation harness, meeting sub-second query latency at the gallery scale required by the benchmark. Our submission took <b>first place</b> in the FRVT face-recognition track.
+                </p>
+              </td>
+            </tr>
 
           </tbody></table>
 
 
           <!-- =========================================================
-               3. 工作经历 Experience
-               每一行 = 一段经历，按时间倒序排列（最近的在最上面）
+               PUBLICATIONS
                ========================================================= -->
           <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
             <tr>
               <td style="padding:16px;width:100%;vertical-align:middle">
-                <h2>工作经历 / Experience</h2>
+                <h2>Publications</h2>
               </td>
             </tr>
           </tbody></table>
 
           <table style="width:100%;border:0px;border-spacing:0px 10px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 
-            <!-- ---------- 经历 1（最新）---------- -->
             <tr>
-              <td style="padding:8px;width:25%;vertical-align:top">
-                <img src="images/company-vivix.png" width="100"><br>
-                <strong>2024.XX – 至今</strong>
-              </td>
-              <td style="padding:8px;width:75%;vertical-align:top">
-                <strong>Vivix AI</strong> · 高级工程师<br>
-                <em>数据/AI 团队</em>
-                <p>一句话总结这段工作做了什么，比如：负责 XX 系统的设计与实现，主导了 YY 项目。</p>
+              <td style="padding:8px;width:100%;vertical-align:middle">
+                <a href="https://openreview.net/forum?id=NmXR-9tGrIB"><span class="papertitle">GoBigger: A Scalable Platform for Cooperative-Competitive Multi-Agent Interactive Simulation</span></a>
+                <br>
+                <b>Ming Zhang</b>, et al.
+                <br>
+                <em>International Conference on Learning Representations (ICLR)</em>, 2023.
+                <br>
+                <a href="https://openreview.net/forum?id=NmXR-9tGrIB">paper</a> /
+                <a href="https://github.com/opendilab/GoBigger">code</a>
               </td>
             </tr>
 
-            <!-- ---------- 经历 2 ---------- -->
             <tr>
-              <td style="padding:8px;width:25%;vertical-align:top">
-                <img src="images/company-previous.png" width="100"><br>
-                <strong>2021.XX – 2024.XX</strong>
-              </td>
-              <td style="padding:8px;width:75%;vertical-align:top">
-                <strong>上一家公司</strong> · 工程师<br>
-                <em>某某团队</em>
-                <p>做了什么。</p>
-              </td>
-            </tr>
-
-            <!-- ---------- 教育经历 ---------- -->
-            <tr>
-              <td style="padding:8px;width:25%;vertical-align:top">
-                <img src="images/university.png" width="100"><br>
-                <strong>2017 – 2021</strong>
-              </td>
-              <td style="padding:8px;width:75%;vertical-align:top">
-                <strong>XX 大学</strong> · 计算机科学 学士<br>
-                <p>相关课程、研究方向、导师等（可选）。</p>
+              <td style="padding:8px;width:100%;vertical-align:middle">
+                <a href="https://arxiv.org/abs/2105.11694"><span class="papertitle">FNAS: Uncertainty-Aware Fast Neural Architecture Search</span></a>
+                <br>
+                Jihao Liu, <b>Ming Zhang</b>, Yangting Sun, Boxiao Liu, Guanglu Song, Yu Liu, Hongsheng Li
+                <br>
+                <em>arXiv preprint</em>, 2021.
+                <br>
+                <a href="https://arxiv.org/abs/2105.11694">paper</a>
               </td>
             </tr>
 
@@ -173,31 +248,84 @@
 
 
           <!-- =========================================================
-               4. 荣誉与奖项 Honors & Awards（可选，没有就删掉整块）
+               HONORS & AWARDS
                ========================================================= -->
           <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
             <tr>
               <td style="padding:16px;width:100%;vertical-align:middle">
-                <h2>荣誉 / Honors &amp; Awards</h2>
-                <ul>
-                  <li>2024 — 某个奖项 / 认证</li>
-                  <li>2022 — 某个比赛第 X 名</li>
-                  <li>2020 — 某某奖学金</li>
-                </ul>
+                <h2>Honors &amp; Awards</h2>
+                <p><b>Gold Medal</b>, <a href="https://www.kaggle.com/competitions/landmark-retrieval-2020">Google Landmark Retrieval 2020</a> (Kaggle).</p>
+                <p><b>1st Place</b>, Face Recognition Track, <a href="https://pages.nist.gov/frvt/">NIST FRVT</a> (2019/2020).</p>
               </td>
             </tr>
           </tbody></table>
 
 
           <!-- =========================================================
-               5. 页脚（保留对原模板作者的致谢是学术圈惯例，可保留）
+               EXPERIENCE
+               ========================================================= -->
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr>
+              <td style="padding:16px;width:100%;vertical-align:middle">
+                <h2>Experience</h2>
+              </td>
+            </tr>
+          </tbody></table>
+
+          <table style="width:100%;border:0px;border-spacing:0px 10px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+
+            <tr>
+              <td style="padding:8px;width:25%;vertical-align:top">
+                <strong>2025.01 &ndash; Present</strong>
+              </td>
+              <td style="padding:8px;width:75%;vertical-align:top">
+                <strong><a href="https://vivix.ai/">Vivix</a></strong> &middot; Algorithm Engineer<br>
+                <em>Data infrastructure for multimodal foundation model pretraining. Founding team.</em>
+              </td>
+            </tr>
+
+            <tr>
+              <td style="padding:8px;width:25%;vertical-align:top">
+                <strong>2019.09 &ndash; 2025.01</strong>
+              </td>
+              <td style="padding:8px;width:75%;vertical-align:top">
+                <strong>SenseTime</strong> &middot; Algorithm Engineer (intern &rarr; full-time)<br>
+                <em>Yu Liu's group. Face recognition, reinforcement learning, neural architecture search, and image generation.</em>
+              </td>
+            </tr>
+
+            <tr>
+              <td style="padding:8px;width:25%;vertical-align:top">
+                <strong>2018 &ndash; 2021</strong>
+              </td>
+              <td style="padding:8px;width:75%;vertical-align:top">
+                <strong>Beijing University of Posts and Telecommunications</strong><br>
+                <em>M.Eng., Communication Engineering.</em>
+              </td>
+            </tr>
+
+            <tr>
+              <td style="padding:8px;width:25%;vertical-align:top">
+                <strong>2014 &ndash; 2018</strong>
+              </td>
+              <td style="padding:8px;width:75%;vertical-align:top">
+                <strong>Beijing University of Posts and Telecommunications</strong><br>
+                <em>B.Eng., Information Engineering.</em>
+              </td>
+            </tr>
+
+          </tbody></table>
+
+
+          <!-- =========================================================
+               FOOTER
                ========================================================= -->
           <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
             <tr>
               <td style="padding:0px">
                 <br>
                 <p style="text-align:right;font-size:small;">
-                  网站模板改自 <a href="https://jonbarron.info/">Jon Barron</a>。
+                  Website template borrowed from <a href="https://jonbarron.info/">Jon Barron</a>.
                 </p>
               </td>
             </tr>
