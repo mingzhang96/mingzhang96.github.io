@@ -164,10 +164,10 @@
                 <em>SenseTime / OpenDILab &middot; 2021.08 &ndash; 2022</em>
                 <br>
                 <p>
-                  GoBigger is an <em>agar</em>-like multi-agent game environment released as part of the <a href="https://github.com/opendilab">OpenDILab</a> open-source ecosystem (<b>3.6k+ stars</b> on the flagship <a href="https://github.com/opendilab/DI-engine">DI-engine</a> framework; <b>500+</b> on GoBigger itself), designed for research on cooperation and competition among learning agents. I designed and implemented the environment, built the accompanying benchmark, and led algorithmic work on multi-agent reinforcement learning within this setting.
+                  GoBigger is an <em>agar</em>-like multi-agent game environment (<b>500+ GitHub stars</b>) released as part of the OpenDILab ecosystem, purpose-built for research on cooperation and competition among learning agents. I designed and implemented the environment end-to-end &mdash; action and partially-observable observation spaces, split/merge physics, multi-process synchronization, and the replay and visualization system that made agent behavior legible.
                 </p>
                 <p>
-                  On top of the environment I organized a large-scale multi-agent RL competition that attracted <b>1,000+ participants</b>. Beyond GoBigger itself, I also contributed multi-agent RL algorithms and operator-level performance optimizations upstream to DI-engine.
+                  On top of the environment I built the accompanying benchmark covering the standard multi-agent RL baselines (IPPO, MAPPO, QMIX, independent PPO, rule-based bots), and &mdash; inspired by DI-star &mdash; a full <b>Elo-based ladder system</b> with matchmaking rules so agent quality could be evaluated head-to-head rather than only against fixed opponents. This ladder became the evaluation backbone for a large-scale multi-agent RL competition <b>co-hosted by Shanghai AI Lab and SenseTime, which attracted 1,000+ participants</b>.
                 </p>
                 <p>
                   <a href="https://github.com/opendilab/GoBigger">code</a> /
@@ -217,6 +217,36 @@
                   DI-star is an open-source distributed training platform for StarCraft II agents (<b>1.4k+ GitHub stars</b>), whose trained models compete at grandmaster level and have publicly played against professional players. I owned the <b>actor</b> subsystem &mdash; environment inference, tensor transport optimization between actors and learners, and the parallel process-management layer that keeps thousands of concurrent rollouts stable.
                 </p>
                 <p><a href="https://github.com/opendilab/DI-star">code</a></p>
+              </td>
+            </tr>
+
+            <!-- ---------- OpenDILab / DI-engine ---------- -->
+            <tr>
+              <td style="padding:16px;width:20%;vertical-align:middle">
+                <a href="https://github.com/opendilab/DI-engine">
+                  <img src="images/opendilab.jpg" alt="OpenDILab / DI-engine" style="width:100%;max-width:160px;border-radius:6px;">
+                </a>
+              </td>
+              <td style="padding:8px;width:80%;vertical-align:middle">
+                <a href="https://github.com/opendilab/DI-engine">
+                  <span class="papertitle">OpenDILab / DI-engine &mdash; Core Contributor</span>
+                </a>
+                <br>
+                <em>SenseTime / OpenDILab &middot; 2020 &ndash; 2022</em>
+                <br>
+                <p>
+                  <a href="https://github.com/opendilab">OpenDILab</a> is SenseTime's open-source decision-intelligence ecosystem, anchored by <a href="https://github.com/opendilab/DI-engine">DI-engine</a> &mdash; a general RL framework (<b>3.6k+ GitHub stars</b>) supporting <b>57+ algorithms</b> across DRL, multi-agent RL, imitation learning, offline RL, and model-based RL. In addition to owning the individual environments and subsystems above (GoBigger, DI-star's actor layer), I was a <b>core contributor</b> to DI-engine itself, participating in the framework's design and implementation.
+                </p>
+                <p>
+                  On the performance side I contributed to <a href="https://github.com/opendilab/DI-hpc">DI-hpc</a>, the CUDA / Triton operator library that accelerates the hot loops of RL training &mdash; <b>GAE, n-step TD, and LSTM</b> &mdash; where PyTorch's default implementations were the bottleneck. These custom kernels are used across DI-engine and its downstream projects.
+                </p>
+                <p>
+                  DI-engine underpins a substantial family of downstream OpenDILab projects (DI-star, DI-drive, DI-smartcross, LightZero, &hellip;) and has been the underlying infrastructure for published work at ICLR, CoRL, NeurIPS Spotlight, and CVPR &mdash; including GoBigger (ICLR 2023), LightZero (NeurIPS 2023 Spotlight), InterFuser (CoRL 2022), and LMDrive (CVPR 2024).
+                </p>
+                <p>
+                  <a href="https://github.com/opendilab/DI-engine">DI-engine</a> /
+                  <a href="https://github.com/opendilab/DI-hpc">DI-hpc</a>
+                </p>
               </td>
             </tr>
 
